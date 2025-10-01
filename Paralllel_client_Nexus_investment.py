@@ -44,8 +44,8 @@ def run_task_nexus_investment(input_data: BaseModel):
     task_spec = build_task_spec_param(InputModel, OutputModel)
     task_run = client.task_run.create(
         input=input_data.model_dump(),
-        task_spec = task_spec,
-        processor=""
+        task_spec=task_spec,
+        processor="base"
     )
     print(f"Run id: {task_run.run_id}")
 
